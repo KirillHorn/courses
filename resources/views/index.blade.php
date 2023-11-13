@@ -85,9 +85,10 @@
                   <p class="card-text">{{$item->duration}}</p>
                   <a href="#" class="btn btn-primary">Записаться</a>
                 </div>
-                @empty 
+           
                
               </div>
+              @empty 
               @endforelse
               </div>
            

@@ -14,7 +14,7 @@ class CourseController extends Controller
         // return view("index",[
         //     "courses"=>$courses
         // ]);
-        $courses = Course::paginate(5);
+        $courses = Course::paginate(4   );
         return view('index', compact('courses'));
     }
     public function create(Request $request) 
