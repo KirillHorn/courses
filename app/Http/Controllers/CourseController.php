@@ -10,10 +10,12 @@ class CourseController extends Controller
 {
     public function index()
     {
-        $courses = Course::all();
-        return view("index",[
-            "courses"=>$courses
-        ]);
+        // $courses = Course::all();
+        // return view("index",[
+        //     "courses"=>$courses
+        // ]);
+        $courses = Course::paginate(5);
+        return view('index', compact('courses'));
     }
     public function create(Request $request) 
     {

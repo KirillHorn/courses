@@ -75,7 +75,7 @@
             <div class="container" style="margin: 50px auto;">
             <h2 class="m-3"> Наши курсы </h2>
             <div class="d-flex" style="gap: 40px">
-                @foreach ($courses as $item)
+            @forelse ($courses as $item)
             <div class="card" style="width: 18rem;">
                 <img src="storage\image\{{$item->img}}" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -85,10 +85,17 @@
                   <p class="card-text">{{$item->duration}}</p>
                   <a href="#" class="btn btn-primary">Записаться</a>
                 </div>
+                @empty 
+               
               </div>
-              @endforeach
+              @endforelse
               </div>
+           
               </div>
+              <div>
+                There are no users.
+                </div>
+              {{ $courses->withQueryString()->links('pagination::bootstrap-5') }}
         </section>
     
         <section id="enroll">
