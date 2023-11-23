@@ -7,6 +7,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\autoController;
 use App\Http\Controllers\PersonalController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -33,3 +34,5 @@ Route::get("/application/{id_application}/confirm", [ApplicationController::clas
 Route::post("/course/create",[CourseController::class,"create"]);
 
 Route::post("/categoru/create", [CategoryController::class,"create"]);
+
+Route::get("index/{id}/categories", [CategoryController::class, "categories"]);

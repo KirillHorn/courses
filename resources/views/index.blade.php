@@ -98,7 +98,20 @@
                 </div>
               {{ $courses->withQueryString()->links('pagination::bootstrap-5') }}
         </section>
-    
+
+        <section>
+
+          <div class="container">
+            <h2>Список категорий</h2>
+          <ul>
+          @foreach ($categorus as $item)
+              <li><a href="index/{{$item->id}}/categories">{{ $item->title }}</a></li>
+              @endforeach
+          </ul>
+          </div>
+        </section>
+
+
         <section id="enroll">
             <div class="container">
                 <form method="POST" action="/enroll">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Categoru;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -14,9 +15,13 @@ class CourseController extends Controller
         // return view("index",[
         //     "courses"=>$courses
         // ]);
-        $courses = Course::paginate(4   );
-        return view('index', compact('courses'));
+        $courses = Course::paginate(4);
+        $categories = Categoru::all();
+       
+        return view('index', compact('courses'),["categorus" => $categories]);
     }
+
+    
     public function create(Request $request) 
     {
         $request->validate([
