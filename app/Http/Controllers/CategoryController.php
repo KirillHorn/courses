@@ -26,13 +26,18 @@ class CategoryController extends Controller
         return redirect()->back();
     }
 
-    public function categories ($id) {
-        $categories_find = Course::where("categoru_id" , $id)
-        ->get()
-        ;
-        // dd ($categories_find);
-       return view('categories' , ["courses" => $categories_find]) ;
+    // public function categories ($id) {
+    //     $categories_find = Course::where("categoru_id" , $id)
+    //     ->get()
+    //     ;
+    //     // dd ($categories_find);
+    //    return view('categories' , ["courses" => $categories_find]) ;
         
+    // }
+    public function categories($id)
+    {
+        $categories_find = Categoru::find($id)->courses;
+        return view('categories', ['courses'=>$categories_find]);
     }
 }
    
